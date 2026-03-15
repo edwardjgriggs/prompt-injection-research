@@ -33,11 +33,18 @@ INJECTION_PATTERNS = [
         "explanation": "Classic goal hijacking pattern — attempts to override system instructions by explicitly telling the model to ignore them.",
     },
     {
+        "pattern": r"(?i)you\s+are\s+(now\s+|actually\s+)?(a|an|the)\s+(evil|unrestricted|unfiltered|uncensored|rogue|malicious|hacked|jailbroken|dangerous)\s+\w+",
+        "category": "Direct Injection",
+        "subcategory": "Jailbreaking",
+        "weight": 0.8,
+        "explanation": "Persona manipulation — attempts to reassign the model's identity to an unrestricted or malicious persona to bypass safety constraints.",
+    },
+    {
         "pattern": r"(?i)you\s+are\s+(now|actually)\s+(a|an|the)\s+\w+",
         "category": "Direct Injection",
         "subcategory": "Jailbreaking",
         "weight": 0.7,
-        "explanation": "Persona manipulation — attempts to reassign the model's identity to bypass safety constraints (e.g., DAN prompts).",
+        "explanation": "Persona reassignment — attempts to override the model's identity with a new role (e.g., DAN prompts).",
     },
     {
         "pattern": r"(?i)(DAN|do\s+anything\s+now)",
@@ -104,6 +111,21 @@ INJECTION_PATTERNS = [
         "subcategory": "Token Manipulation",
         "weight": 0.6,
         "explanation": "Token splitting — breaks injection payloads across multiple tokens or instructions to evade classifier detection.",
+    },
+    # Sensitive data extraction
+    {
+        "pattern": r"(?i)(give|show|tell|list|provide|reveal|share)\s+(me\s+)?(all\s+|every\s+|the\s+)?(passwords?|credentials?|credit\s*cards?|debit\s*cards?|ssn|social\s+security|api\s*keys?|secrets?|private\s*keys?|bank\s+account|financial\s+(data|info|records?)|personal\s+(data|info|records?)|customer\s+(data|info|records?))",
+        "category": "Direct Injection",
+        "subcategory": "Data Extraction",
+        "weight": 0.75,
+        "explanation": "Sensitive data extraction — attempts to coerce the model into revealing confidential information such as credentials, financial data, or personal records.",
+    },
+    {
+        "pattern": r"(?i)you\s+are\s+(to|going\s+to|supposed\s+to)\s+(give|provide|share|reveal|show|send|output)",
+        "category": "Direct Injection",
+        "subcategory": "Goal Hijacking",
+        "weight": 0.7,
+        "explanation": "Authoritative directive — frames a command as an obligation the model must follow, attempting to override its safety boundaries.",
     },
     # Payload extraction
     {
