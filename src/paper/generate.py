@@ -39,9 +39,9 @@ PAPER_TITLE = (
     "Prompt Injection Attacks in Large Language Models: "
     "A Survey of Attack Taxonomies, Risks, Detection, and Prevention"
 )
-AUTHOR = "Edward"  # Update with full name
-INSTITUTION = "Commonwealth Cyber Initiative"
-DEPARTMENT = "Cybersecurity Research Division"
+AUTHOR = "Edward Griggs"
+INSTITUTION = "Christopher Newport University"
+DEPARTMENT = "COVACCI Cybersecurity Undergraduate Research"
 
 
 def _set_apa_defaults(doc: Document):
