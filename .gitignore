@@ -9,3 +9,5 @@ build/
 .venv/
 venv/
 .gsd/
+.claude/
+.bg-shell/
