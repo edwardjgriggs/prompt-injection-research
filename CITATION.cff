@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this research, please cite it as below."
+authors:
+  - family-names: "Griggs"
+    given-names: "Edward"
+    orcid: ""
+title: "Prompt Injection Attacks in Large Language Models: A Survey of Attack Taxonomies, Risks, Detection, and Prevention"
+date-released: 2026-04-17
+url: "https://github.com/edwardjgriggs/prompt-injection-research"
+type: report
+keywords:
+  - prompt injection
+  - large language models
+  - cybersecurity
+  - LLM security
+  - AI safety
+institution:
+  name: "Christopher Newport University"
